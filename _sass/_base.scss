@@ -75,10 +75,6 @@ section {
     padding: 100px 0;
 }
 
-aside {
-    padding: 50px 0;
-}
-
 .no-padding {
     padding: 0;
 }
@@ -186,7 +182,7 @@ header {
         width: 100%;
         .header-content-inner {
             img {
-                max-width: 50%;
+                width: 50%;
                 height: auto;
                 margin: 30px auto;
             }
