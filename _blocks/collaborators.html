@@ -1,0 +1,73 @@
+---
+name: collaborators
+type: light
+title: In Collaboration with
+button_text: # Blank means no button
+button_url: 
+menu_text:  # If left blank this defaults to the id
+menu_exclude: false
+width: 14
+---
+
+{% assign colcount = site.collaborators.size %}
+
+{% if site.collaborators.size == 1 %}
+    {% assign size = 6 %}
+    {% assign first_offset = 3 %}
+    {% assign offset = 0 %}
+{% elsif colcount == 2 %}
+    {% assign size = 6 %}
+    {% assign first_offset = 0 %}
+    {% assign offset = 0 %}
+{% elsif colcount == 3 %}
+    {% assign size = 4 %}
+    {% assign first_offset = 0 %}
+    {% assign offset = 0 %}
+{% elsif colcount == 4 %}
+    {% assign size = 3 %}
+    {% assign first_offset = 0 %}
+    {% assign offset = 0 %}
+{% elsif colcount == 5 %}
+    {% assign size = 2 %}
+    {% assign first_offset = 1 %}
+    {% assign offset = 0 %}
+{% elsif colcount == 6 %}
+    {% assign size = 2 %}
+    {% assign first_offset = 0 %}
+    {% assign offset = 0 %}
+{% endif %}
+{% assign first = true %}
+
+
+{% if size %}
+	<div class="container">
+	    <div class="row">
+            {% for collaborator in site.collaborators %}
+                <div class="
+                    col-md-{{ size }}
+                    {% if first %}
+                        {% assign first = false %}
+                        col-md-offset-{{ first_offset }}
+                    {% else %}
+                        col-md-offset-{{ offset }}
+                    {% endif %}
+                    text-center
+                    bg-light
+                ">
+                <a href="{{ collaborator.website }}" target="_blank">
+                    <div class="service-box">
+                        <i class="fa wow bounceIn text-primary">
+                            <img src="{{collaborator.logo}}">
+                        </i>
+<!--                        <p class="collab">{{ collaborator.name }}</p>-->
+                    </div>
+                </a>
+                </div>
+            {% endfor %}
+	    </div>
+	</div>
+{% else %}
+	<div class="container">
+	    <h1>ERROR: Cannot render {{ colcount }} columns, can render 1, 2, 3, 4, 5, 6, 8, 10 or 12 colums</h1>
+	</div>>
+{% endif %}

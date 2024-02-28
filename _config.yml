@@ -6,7 +6,7 @@ first_button_text: 'Find out more'
 first_button_url: '#install'
 header_img: #
 home_menu_text: Home
-home_menu_img: /img/logo.png
+home_menu_img: /img/logos/slicerheart.png
 description: Tools for cardiac image import (3D/4D ultrasound, CT, MRI), quantification, surgical planning, and implant placement planning and assessment.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: https://slicerheart.org # the base hostname & protocol for your site
@@ -25,6 +25,8 @@ collections:
   blocks:
     output: false
   gallery:
+    output: false
+  collaborators:
     output: false
 
 # Build settings
